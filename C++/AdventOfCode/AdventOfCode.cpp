@@ -19,7 +19,7 @@ enum ProblemState
 
 constexpr ProblemState state = Full;
 constexpr int year = 2022;
-constexpr int day = 1;
+constexpr int day = 3;
 
 int main(int argc, char* argv[])
 {

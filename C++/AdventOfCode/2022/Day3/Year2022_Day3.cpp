@@ -15,7 +15,14 @@ float Year2022_Day3::Problem1()
 
 float Year2022_Day3::Problem2()
 {
-    return 0;
+    int badge_sum = 0;
+    for(size_t i = 0; i < lines.size(); i+=3)
+    {
+        const vector<string> group({lines[i], lines[i+1], lines[i+2]});
+        const char badge = FindBadgeFromRucksacks(group);
+        badge_sum += GetItemOrder(badge);
+    }
+    return static_cast<float>(badge_sum);
 }
 
 vector<string> Year2022_Day3::SplitRucksackInTwo(const string& rucksack) const
@@ -45,6 +52,27 @@ char Year2022_Day3::FindMatchingRucksackItem(vector<string> rucksack) const
     }
 
     cout << "No item found between: " << rucksack[0] << " and " << rucksack[1] << endl;
+    return 0;
+}
+
+char Year2022_Day3::FindBadgeFromRucksacks(vector<string> rucksacks) const
+{
+    const unordered_multiset<char> rucksack_1(rucksacks[0].begin(), rucksacks[0].end());
+    const unordered_multiset<char> rucksack_2(rucksacks[1].begin(), rucksacks[1].end());
+    const unordered_multiset<char> rucksack_3(rucksacks[2].begin(), rucksacks[2].end());
+
+    unordered_multiset<char> rucksack_1_2_union;
+    for(char c : rucksack_1)
+    {
+        if(rucksack_2.count(c)) rucksack_1_2_union.emplace(c);
+    }
+
+    for(char c : rucksack_3)
+    {
+        if(rucksack_1_2_union.count(c)) return c;
+    }
+
+    cout << "No badge found between: " << rucksacks[0] << ", " << rucksacks[1] << ", and " << rucksacks[2] << endl;
     return 0;
 }
 

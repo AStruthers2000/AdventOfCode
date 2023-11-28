@@ -15,5 +15,6 @@ public:
 private:
     vector<string> SplitRucksackInTwo(const string& rucksack) const;
     char FindMatchingRucksackItem(vector<string> rucksack) const;
+    char FindBadgeFromRucksacks(vector<string> rucksacks) const;
     int GetItemOrder(char item) const;
 };
