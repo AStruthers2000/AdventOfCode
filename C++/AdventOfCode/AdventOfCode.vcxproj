@@ -157,6 +157,8 @@
     <ClCompile Include="2022\Day1\Year2022_Day1.cpp" />
     <ClCompile Include="2022\Day2\Year2022_Day2.cpp" />
     <ClCompile Include="2022\Day3\Year2022_Day3.cpp" />
+    <ClCompile Include="2022\Day4\Year2022_Day4.cpp" />
+    <ClCompile Include="2022\Day5\Year2022_Day5.cpp" />
     <ClCompile Include="AdventOfCode.cpp" />
     <ClCompile Include="Problem.cpp" />
   </ItemGroup>
@@ -167,6 +169,8 @@
     <ClInclude Include="2022\Day1\Year2022_Day1.h" />
     <ClInclude Include="2022\Day2\Year2022_Day2.h" />
     <ClInclude Include="2022\Day3\Year2022_Day3.h" />
+    <ClInclude Include="2022\Day4\Year2022_Day4.h" />
+    <ClInclude Include="2022\Day5\Year2022_Day5.h" />
     <ClInclude Include="Problem.h" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +180,10 @@
     <Content Include="2022\Day2\test.txt" />
     <Content Include="2022\Day3\input.txt" />
     <Content Include="2022\Day3\test.txt" />
+    <Content Include="2022\Day4\input.txt" />
+    <Content Include="2022\Day4\test.txt" />
+    <Content Include="2022\Day5\input.txt" />
+    <Content Include="2022\Day5\test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

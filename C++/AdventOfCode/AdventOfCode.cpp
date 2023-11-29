@@ -4,6 +4,8 @@
 #include "2022/Day1/Year2022_Day1.h"
 #include "2022/Day2/Year2022_Day2.h"
 #include "2022/Day3/Year2022_Day3.h"
+#include "2022/Day4/Year2022_Day4.h"
+#include "2022/Day5/Year2022_Day5.h"
 using namespace std;
 
 enum
@@ -17,15 +19,17 @@ enum ProblemState
     Full
 };
 
-constexpr ProblemState state = Full;
+constexpr ProblemState state = Test;
 constexpr int year = 2022;
-constexpr int day = 3;
+constexpr int day = 5;
 
 int main(int argc, char* argv[])
 {
     const vector<vector<Problem*>> problems = {
         //2022 problems
-        {new Year2022_Day1(), new Year2022_Day2(), new Year2022_Day3()},
+        {
+            new Year2022_Day1(), new Year2022_Day2(), new Year2022_Day3(), new Year2022_Day4(), new Year2022_Day5(),
+        },
 
         //2023 problems
         {}
