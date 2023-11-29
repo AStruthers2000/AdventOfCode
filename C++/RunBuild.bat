@@ -4,5 +4,5 @@
 @cd AdventOfCode\
 @del AdventOfCode
 @copy AdventOfCode.exe AdventOfCode >nul
-@cmd.exe
 prompt $g
+cmd.exe
