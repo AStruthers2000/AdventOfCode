@@ -190,6 +190,8 @@
     <Content Include="2022\Day5\test.txt" />
     <Content Include="2022\Day6\input.txt" />
     <Content Include="2022\Day6\test.txt" />
+    <Content Include="2022\Day7\input.txt" />
+    <Content Include="2022\Day7\test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
