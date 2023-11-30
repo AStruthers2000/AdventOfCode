@@ -160,6 +160,7 @@
     <ClCompile Include="2022\Day4\Year2022_Day4.cpp" />
     <ClCompile Include="2022\Day5\Year2022_Day5.cpp" />
     <ClCompile Include="2022\Day6\Year2022_Day6.cpp" />
+    <ClCompile Include="2022\Day7\Year2022_Day7.cpp" />
     <ClCompile Include="AdventOfCode.cpp" />
     <ClCompile Include="Problem.cpp" />
   </ItemGroup>
@@ -173,6 +174,7 @@
     <ClInclude Include="2022\Day4\Year2022_Day4.h" />
     <ClInclude Include="2022\Day5\Year2022_Day5.h" />
     <ClInclude Include="2022\Day6\Year2022_Day6.h" />
+    <ClInclude Include="2022\Day7\Year2022_Day7.h" />
     <ClInclude Include="Problem.h" />
   </ItemGroup>
   <ItemGroup>

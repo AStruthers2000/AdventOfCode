@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include "../Day1/Year2022_Day1.h"
+#include "../../Problem.h"
 
 class Year2022_Day2 : public Problem
 {
 public:
-    Year2022_Day2() : Problem("2022 Day 2")
+    Year2022_Day2() : Problem("2022 Day 2 - Rock Paper Scissors")
     {
         filepath = R"(./2022/Day2/)";
     }
