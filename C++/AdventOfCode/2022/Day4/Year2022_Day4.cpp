@@ -1,6 +1,6 @@
 ﻿#include "Year2022_Day4.h"
 
-float Year2022_Day4::Problem1()
+string Year2022_Day4::Problem1()
 {
     int overlap_count = 0;
     for(const auto& line : lines)
@@ -10,10 +10,10 @@ float Year2022_Day4::Problem1()
         overlap_count += CheckSchedulesForTotalOverlap(elf_1, elf_2);
     }
     
-    return static_cast<float>(overlap_count);
+    return to_string(overlap_count);
 }
 
-float Year2022_Day4::Problem2()
+string Year2022_Day4::Problem2()
 {
     int overlap_count = 0;
     for(const auto& line : lines)
@@ -23,7 +23,7 @@ float Year2022_Day4::Problem2()
         overlap_count += CheckSchedulesForAnyOverlap(elf_1, elf_2);
     }
 
-    return static_cast<float>(overlap_count);
+    return to_string(overlap_count);
 }
 
 Year2022_Day4::Schedule Year2022_Day4::ReadSchedule(const string& elf_schedule) const

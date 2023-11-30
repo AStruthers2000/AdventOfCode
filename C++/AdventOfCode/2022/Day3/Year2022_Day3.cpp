@@ -2,7 +2,7 @@
 
 
 
-float Year2022_Day3::Problem1()
+string Year2022_Day3::Problem1()
 {
     int duplicate_item_sum = 0;
     for(const auto& line : lines)
@@ -10,10 +10,10 @@ float Year2022_Day3::Problem1()
         const char same_item = FindMatchingRucksackItem(SplitRucksackInTwo(line));
         duplicate_item_sum += GetItemOrder(same_item);
     }
-    return static_cast<float>(duplicate_item_sum);
+    return to_string(duplicate_item_sum);
 }
 
-float Year2022_Day3::Problem2()
+string Year2022_Day3::Problem2()
 {
     int badge_sum = 0;
     for(size_t i = 0; i < lines.size(); i+=3)
@@ -22,7 +22,7 @@ float Year2022_Day3::Problem2()
         const char badge = FindBadgeFromRucksacks(group);
         badge_sum += GetItemOrder(badge);
     }
-    return static_cast<float>(badge_sum);
+    return to_string(badge_sum);
 }
 
 vector<string> Year2022_Day3::SplitRucksackInTwo(const string& rucksack) const

@@ -10,8 +10,8 @@ public:
         filepath = R"(./2022/Day1/)";
     }
     
-    float Problem1() override;
-    float Problem2() override;
+    string Problem1() override;
+    string Problem2() override;
 
 private:
     vector<int> GetCalorieSums() const;

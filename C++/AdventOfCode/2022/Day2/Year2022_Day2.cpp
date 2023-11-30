@@ -1,6 +1,6 @@
 ﻿#include "Year2022_Day2.h"
 
-float Year2022_Day2::Problem1()
+string Year2022_Day2::Problem1()
 {
     int round_sum = 0;
     auto rounds = GetRounds();
@@ -11,10 +11,10 @@ float Year2022_Day2::Problem1()
         const int move = round.my_move; 
         round_sum += result + move;
     }
-    return static_cast<float>(round_sum);
+    return to_string(round_sum);
 }
 
-float Year2022_Day2::Problem2()
+string Year2022_Day2::Problem2()
 {
     int round_sum = 0;
     auto rounds = GetRounds();
@@ -26,7 +26,7 @@ float Year2022_Day2::Problem2()
         const int move = round.my_move;
         round_sum += result + move;
     }
-    return static_cast<float>(round_sum);
+    return to_string(round_sum);
 }
 
 vector<Year2022_Day2::RPS_Round> Year2022_Day2::GetRounds() const

@@ -1,18 +1,18 @@
 ﻿#include "Year2022_Day1.h"
 
-float Year2022_Day1::Problem1()
+string Year2022_Day1::Problem1()
 {
     auto calorie_sums = GetCalorieSums();
     const int solution = *max_element(calorie_sums.begin(), calorie_sums.end());
-    return static_cast<float>(solution);
+    return to_string(solution);
 }
 
-float Year2022_Day1::Problem2()
+string Year2022_Day1::Problem2()
 {
     auto calorie_sums = GetCalorieSums();
     stable_sort(calorie_sums.begin(), calorie_sums.end(), greater<>());
     const int solution = calorie_sums[0] + calorie_sums[1] + calorie_sums[2];
-    return static_cast<float>(solution);
+    return to_string(solution);
 }
 
 vector<int> Year2022_Day1::GetCalorieSums() const

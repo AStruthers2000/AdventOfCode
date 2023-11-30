@@ -23,8 +23,8 @@ public:
     virtual ~Problem() = default;
 
     void ReadFromFile(const string& filename);
-    virtual float Problem1() = 0;
-    virtual float Problem2() = 0;
+    virtual string Problem1() = 0;
+    virtual string Problem2() = 0;
     virtual string GetProblemName() { return _problem_name; }
 
 protected:
