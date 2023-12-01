@@ -10,7 +10,14 @@ string Year2022_Day7::Problem1()
 
 string Year2022_Day7::Problem2()
 {
-    return "";
+    if(head->sum_of_sizes == 0) ParseFile();
+
+    const int unused_space = TOTAL_DISK_SPACE - head->sum_of_sizes;
+    const int space_required = REQUIRED_SPACE - unused_space;
+    vector<const Folder*> candidates = {};
+    VisitSubfolders(head, space_required, candidates);
+    sort(candidates.begin(), candidates.end(), CompareFolderBySize);
+    return to_string(candidates.at(0)->sum_of_sizes);
 }
 
 
@@ -84,3 +91,17 @@ void Year2022_Day7::VisitSubfolders(const Folder* current, int* sum)
         VisitSubfolders(folder, sum);
     }
 }
+
+void Year2022_Day7::VisitSubfolders(const Folder* current, int size_needed, vector<const Folder*> &could_delete)
+{
+    if(current->sum_of_sizes >= size_needed)
+    {
+        could_delete.push_back(current);
+    }
+
+    for(const auto folder : current->subfolders)
+    {
+        VisitSubfolders(folder, size_needed, could_delete);
+    }
+}
+

@@ -8,6 +8,8 @@
 #include "2022/Day5/Year2022_Day5.h"
 #include "2022/Day6/Year2022_Day6.h"
 #include "2022/Day7/Year2022_Day7.h"
+#include "2022/Day8/Year2022_Day8.h"
+#include "2023/Day1/Year2023_Day1.h"
 using namespace std;
 
 enum
@@ -22,8 +24,8 @@ enum ProblemState
 };
 
 constexpr ProblemState state = Full;
-constexpr int year = 2022;
-constexpr int day = 7;
+constexpr int year = 2023;
+constexpr int day = 1;
 
 int main(int argc, char* argv[])
 {
@@ -31,15 +33,18 @@ int main(int argc, char* argv[])
         //2022 problems
         {
             new Year2022_Day1(), new Year2022_Day2(), new Year2022_Day3(), new Year2022_Day4(), new Year2022_Day5(),
-            new Year2022_Day6(), new Year2022_Day7()
+            new Year2022_Day6(), new Year2022_Day7(), new Year2022_Day8()
         },
 
         //2023 problems
-        {}
+        {
+            new Year2023_Day1()
+        }
     };
 
     int problem_year = year;
     int problem_day = day;
+    ProblemState problem_state = state;
     
     if(argc == 3)
     {
@@ -47,6 +52,7 @@ int main(int argc, char* argv[])
         const int arg_day = strtol(argv[2], nullptr, 10);
         problem_year = arg_year;
         problem_day = arg_day;
+        problem_state = Full;
     }
     
     if(static_cast<int>(problems.size()) > problem_year - FIRST_YEAR &&
@@ -55,7 +61,7 @@ int main(int argc, char* argv[])
         const auto problem = problems[problem_year - FIRST_YEAR][problem_day - 1];
 
         cout << "Solving " << problem->GetProblemName() << endl;
-        problem->ReadFromFile(state  == Test ? "test.txt" : "input.txt");
+        problem->ReadFromFile(problem_state  == Test ? "test.txt" : "input.txt");
         cout << "Solution to problem 1:\t" << problem->Problem1() << endl;
         cout << "--------------------" << endl;
         cout << "Solution to problem 2:\t" << problem->Problem2() << endl;

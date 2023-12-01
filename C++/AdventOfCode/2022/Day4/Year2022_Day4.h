@@ -4,7 +4,7 @@
 class Year2022_Day4 : public Problem
 {
 public:
-    Year2022_Day4() : Problem("2022 Day 4 - Camp Cleanup")
+    Year2022_Day4() : Problem("Year 2022 Day 4: Camp Cleanup")
     {
         filepath = R"(./2022/Day4/)";
     }
