@@ -57,7 +57,7 @@ string Year2023_Day1::ParseWordsToInts(const string& line)
         {"six", "6"},
         {"seven", "7"},
         {"eight", "8"},
-        {"nine", "9"}
+        {"nine", "9"},
     };
     for(size_t i = 0; i < parsed_line.size(); i++)
     {
