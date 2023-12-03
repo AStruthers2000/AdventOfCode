@@ -36,7 +36,28 @@ string Year2023_Day3::Problem1()
 
 string Year2023_Day3::Problem2()
 {
-    return "";
+    int sum_gear_ratios = 0;
+    for(size_t row = 0; row < engine_schematic.size(); row++)
+    {
+        for(size_t col = 0; col < engine_schematic[0].size(); col++)
+        {
+            const char c = engine_schematic[row][col];
+            if(c == '*')
+            {
+                const int x = static_cast<int>(row);
+                const int y = static_cast<int>(col);
+                set<int> adjacent_numbers = LocalSearchForNumbers(y, x);
+                if(adjacent_numbers.size() == 2)
+                {
+                    const int gear_1 = *adjacent_numbers.begin();
+                    const int gear_2 = *next(adjacent_numbers.begin(), 1);
+                    sum_gear_ratios += gear_1 * gear_2;
+                }
+            }
+        }
+    }
+    
+    return to_string(sum_gear_ratios);
 }
 
 vector<vector<char>> Year2023_Day3::ParseEngine()
@@ -83,6 +104,40 @@ bool Year2023_Day3::LocalSearch(const int col, const int row)
         if(!isdigit(symbol)) has_adjacent_symbol = true;
     }
     return has_adjacent_symbol;
+}
+
+set<int> Year2023_Day3::LocalSearchForNumbers(const int col, const int row)
+{
+    struct Coord
+    {
+        int x;
+        int y;
+    };
+    vector<Coord> coords_for_digits;
+
+    for(int i = -1; i <= 1; i++)
+    {
+        for(int j = -1; j <= 1; j++)
+        {
+            if(i == 0 && j == 0) continue;
+            const int col_pos = col - j;
+            const int row_pos = row - i;
+            if(IsValidPosition(col_pos, row_pos))
+            {
+                if(isdigit(engine_schematic[row_pos][col_pos]))
+                {
+                    coords_for_digits.push_back({row_pos, col_pos});
+                }
+            }
+        }
+    }
+
+    set<int> unique_numbers;
+    for(const auto& coord : coords_for_digits)
+    {
+        unique_numbers.emplace(GetNumberAroundSymbol(coord.y, coord.x));
+    }
+    return unique_numbers;
 }
 
 int Year2023_Day3::GetNumberAroundSymbol(const int col, const int row) const
