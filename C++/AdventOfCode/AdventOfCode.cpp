@@ -1,3 +1,4 @@
+#include <chrono>
 #include <vector>
 
 #include "Problem.h"
@@ -12,6 +13,9 @@
 #include "2023/Day1/Year2023_Day1.h"
 #include "2023/Day2/Year2023_Day2.h"
 #include "2023/Day3/Year2023_Day3.h"
+#include "2023/Day4/Year2023_Day4.h"
+#include "2023/Day5/Year2023_Day5.h"
+#include "2023/Day6/Year2023_Day6.h"
 using namespace std;
 
 enum
@@ -27,7 +31,7 @@ enum ProblemState
 
 constexpr ProblemState state = Full;
 constexpr int year = 2023;
-constexpr int day = 3;
+constexpr int day = 6;
 
 int main(int argc, char* argv[])
 {
@@ -40,7 +44,8 @@ int main(int argc, char* argv[])
 
         //2023 problems
         {
-            new Year2023_Day1(), new Year2023_Day2(), new Year2023_Day3()
+            new Year2023_Day1(), new Year2023_Day2(), new Year2023_Day3(), new Year2023_Day4(), new Year2023_Day5(),
+            new Year2023_Day6()
         }
     };
 
@@ -64,9 +69,17 @@ int main(int argc, char* argv[])
 
         cout << "Solving " << problem->GetProblemName() << endl;
         problem->ReadFromFile(problem_state  == Test ? "test.txt" : "input.txt");
+        auto start = chrono::high_resolution_clock::now();
         cout << "Solution to problem 1:\t" << problem->Problem1() << endl;
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
+        cout << "Problem 1 took " << static_cast<double>(duration.count()) / 1e+6 << " seconds to execute" << endl ;
         cout << "--------------------" << endl;
+        start = chrono::high_resolution_clock::now();
         cout << "Solution to problem 2:\t" << problem->Problem2() << endl;
+        end = chrono::high_resolution_clock::now();
+        duration = chrono::duration_cast<chrono::microseconds>(end - start);
+        cout << "Problem 2 took " << static_cast<double>(duration.count()) / 1e+6 << " seconds to execute" << endl ;
         cout << "====================" << endl;
     }
     else
