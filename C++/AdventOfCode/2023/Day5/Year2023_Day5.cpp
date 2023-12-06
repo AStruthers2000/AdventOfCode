@@ -6,7 +6,6 @@ string Year2023_Day5::Problem1()
     BuildSeeds_Standard();
     ConvertSeeds();
     
-    
     const Seed* min_seed = GetSeedWithSmallestLocation();
     return to_string(min_seed->mapped_values.at(HumidityToLocation));
 }
@@ -15,9 +14,17 @@ string Year2023_Day5::Problem2()
 {
     if(conversion_maps.empty()) BuildConversionMaps();
     BuildSeeds_Ranged();
-    ConvertSeeds();
-    const Seed* min_seed = GetSeedWithSmallestLocation();
-    return to_string(min_seed->mapped_values.at(HumidityToLocation));
+    ConvertRangedSeeds();
+
+    RangedSeedGroup smallest_range = {numeric_limits<int64_t>::max(), 0};
+    for(const auto& s : ranged_seeds)
+    {
+        if(s.range_start < smallest_range.range_start)
+        {
+            smallest_range = s;
+        }
+    }
+    return to_string(smallest_range.range_start);
 }
 
 void Year2023_Day5::BuildSeeds_Standard()
@@ -40,17 +47,9 @@ void Year2023_Day5::BuildSeeds_Ranged()
     seed_ints = {seed_ints.begin() + 1, seed_ints.end()};
     for(size_t i = 0; i < seed_ints.size(); i+=2)
     {
-        /*
         const int64_t seed_int = strtoll(seed_ints[i].c_str(), nullptr, 10);
         const int64_t seed_range = strtoll(seed_ints[i + 1].c_str(), nullptr, 10);
-        for(int64_t s = seed_int; s < seed_int + seed_range; s++)
-        {
-            Seed seed = {s, {}};
-            seeds.push_back(seed);
-        }*/
-        const int64_t seed_int = strtoll(seed_ints[i].c_str(), nullptr, 10);
-        const int64_t seed_range = strtoll(seed_ints[i + 1].c_str(), nullptr, 10);
-        ranged_seeds.push_back({seed_int, seed_range});
+        ranged_seeds.emplace_back(seed_int, seed_range);
     }
 }
 
@@ -113,15 +112,18 @@ void Year2023_Day5::ConvertSeed(Seed* seed)
 
 void Year2023_Day5::ConvertRangedSeeds()
 {
-    /*
-    for(const auto& ranged_seed : ranged_seeds)
-    {
-        
-    }
-    */
     for(const auto& seed_map : conversion_maps)
     {
-        
+        vector<RangedSeedGroup> next_ranges;
+        for(const auto& ranged_seed : ranged_seeds)
+        {    
+            RangeBasedMap r_map = seed_map.second;
+            for(const auto& r : r_map.SplitRangedSeedByRanges(ranged_seed))
+            {
+                next_ranges.push_back(r);
+            }
+        }
+        ranged_seeds = next_ranges;
     }
 }
 

@@ -29,7 +29,7 @@ enum ProblemState
     Full
 };
 
-constexpr ProblemState state = Test;
+constexpr ProblemState state = Full;
 constexpr int year = 2023;
 constexpr int day = 5;
 
