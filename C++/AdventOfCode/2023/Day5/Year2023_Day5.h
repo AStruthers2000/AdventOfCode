@@ -33,6 +33,14 @@ private:
         map<MapType, int64_t> mapped_values = {}; 
     };
 
+    struct RangedSeedGroup
+    {
+        int64_t range_start = 0;
+        int64_t range_length = 0;
+
+        Seed start_of_range_seed;
+    };
+
     struct Range
     {
         int64_t destination_start = 0;
@@ -60,12 +68,15 @@ private:
     
     map<MapType, RangeBasedMap> conversion_maps;
     vector<Seed> seeds;
+    vector<RangedSeedGroup> ranged_seeds;
 
     void BuildSeeds_Standard();
     void BuildSeeds_Ranged();
     void BuildConversionMaps();
     void ConvertSeeds();
     void ConvertSeed(Seed* seed);
+    void ConvertRangedSeeds();
+    void 
 
     const Seed* GetSeedWithSmallestLocation();
 };

@@ -29,9 +29,9 @@ enum ProblemState
     Full
 };
 
-constexpr ProblemState state = Full;
+constexpr ProblemState state = Test;
 constexpr int year = 2023;
-constexpr int day = 6;
+constexpr int day = 5;
 
 int main(int argc, char* argv[])
 {

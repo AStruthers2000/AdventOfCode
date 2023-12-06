@@ -40,13 +40,17 @@ void Year2023_Day5::BuildSeeds_Ranged()
     seed_ints = {seed_ints.begin() + 1, seed_ints.end()};
     for(size_t i = 0; i < seed_ints.size(); i+=2)
     {
+        /*
         const int64_t seed_int = strtoll(seed_ints[i].c_str(), nullptr, 10);
         const int64_t seed_range = strtoll(seed_ints[i + 1].c_str(), nullptr, 10);
         for(int64_t s = seed_int; s < seed_int + seed_range; s++)
         {
             Seed seed = {s, {}};
             seeds.push_back(seed);
-        }
+        }*/
+        const int64_t seed_int = strtoll(seed_ints[i].c_str(), nullptr, 10);
+        const int64_t seed_range = strtoll(seed_ints[i + 1].c_str(), nullptr, 10);
+        ranged_seeds.push_back({seed_int, seed_range});
     }
 }
 
@@ -104,6 +108,20 @@ void Year2023_Day5::ConvertSeed(Seed* seed)
             seed_value = last_mapped_num;
         }
         seed->mapped_values[type] = r_map.ConvertNumWithRange(seed_value); 
+    }
+}
+
+void Year2023_Day5::ConvertRangedSeeds()
+{
+    /*
+    for(const auto& ranged_seed : ranged_seeds)
+    {
+        
+    }
+    */
+    for(const auto& seed_map : conversion_maps)
+    {
+        
     }
 }
 
