@@ -16,6 +16,7 @@
 #include "2023/Day4/Year2023_Day4.h"
 #include "2023/Day5/Year2023_Day5.h"
 #include "2023/Day6/Year2023_Day6.h"
+#include "2023/Day7/Year2023_Day7.h"
 using namespace std;
 
 enum
@@ -31,7 +32,7 @@ enum ProblemState
 
 constexpr ProblemState state = Full;
 constexpr int year = 2023;
-constexpr int day = 5;
+constexpr int day = 7;
 
 int main(int argc, char* argv[])
 {
@@ -45,7 +46,7 @@ int main(int argc, char* argv[])
         //2023 problems
         {
             new Year2023_Day1(), new Year2023_Day2(), new Year2023_Day3(), new Year2023_Day4(), new Year2023_Day5(),
-            new Year2023_Day6()
+            new Year2023_Day6(), new Year2023_Day7()
         }
     };
 
