@@ -29,9 +29,12 @@ public:
 
 protected:
     vector<string> lines;
+    string filepath;
 
     vector<string> SplitLineByToken(const string& line, char token) const;
-    string filepath;
+    uint64_t gcd(uint64_t a, uint64_t b);
+    uint64_t lcm(uint64_t a, uint64_t b);
+    uint64_t lcm(const vector<int>& nums);
     
 private:
     string _problem_name;
