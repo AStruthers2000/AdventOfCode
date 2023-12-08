@@ -43,7 +43,7 @@ void Year2023_Day7::FigureOutType(Hand* hand)
     for(const auto& c : hand->cards)
     {
         auto n = count(hand->cards.begin(), hand->cards.end(), c);
-        occurrences.emplace(c, n);
+        occurrences.emplace(c, static_cast<int>(n));
     }
     
     if(part_two)
@@ -55,7 +55,7 @@ void Year2023_Day7::FigureOutType(Hand* hand)
         for(const auto& c : modified_hand)
         {
             auto n = count(modified_hand.begin(), modified_hand.end(), c);
-            occurrences.emplace(c, n);
+            occurrences.emplace(c, static_cast<int>(n));
         }
     }
     
