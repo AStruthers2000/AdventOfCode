@@ -35,6 +35,7 @@ protected:
     uint64_t gcd(uint64_t a, uint64_t b);
     uint64_t lcm(uint64_t a, uint64_t b);
     uint64_t lcm(const vector<int>& nums);
+    bool IsVectorEntirelyN(const vector<int>& v, int n);
     
 private:
     string _problem_name;

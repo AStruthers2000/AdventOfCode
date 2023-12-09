@@ -56,3 +56,10 @@ uint64_t Problem::lcm(const vector<int>& nums)
     }
     return result;
 }
+
+bool Problem::IsVectorEntirelyN(const vector<int>& v, int n)
+{
+    return all_of(v.begin(),
+                  v.end(),
+                  [n](int i) { return i==n; });
+}
