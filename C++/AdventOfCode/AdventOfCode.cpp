@@ -11,6 +11,7 @@
 #include "2022/Day7/Year2022_Day7.h"
 #include "2022/Day8/Year2022_Day8.h"
 #include "2023/Day1/Year2023_Day1.h"
+#include "2023/Day10/Year2023_Day10.h"
 #include "2023/Day2/Year2023_Day2.h"
 #include "2023/Day3/Year2023_Day3.h"
 #include "2023/Day4/Year2023_Day4.h"
@@ -32,9 +33,9 @@ enum ProblemState
     Full
 };
 
-constexpr ProblemState state = Full;
+constexpr ProblemState state = Test;
 constexpr int year = 2023;
-constexpr int day = 9;
+constexpr int day = 10;
 
 int main(int argc, char* argv[])
 {
@@ -48,7 +49,7 @@ int main(int argc, char* argv[])
         //2023 problems
         {
             new Year2023_Day1(), new Year2023_Day2(), new Year2023_Day3(), new Year2023_Day4(), new Year2023_Day5(),
-            new Year2023_Day6(), new Year2023_Day7(), new Year2023_Day8(), new Year2023_Day9()
+            new Year2023_Day6(), new Year2023_Day7(), new Year2023_Day8(), new Year2023_Day9(), new Year2023_Day10()
         }
     };
 

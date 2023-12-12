@@ -36,6 +36,7 @@ protected:
     uint64_t lcm(uint64_t a, uint64_t b);
     uint64_t lcm(const vector<int>& nums);
     bool IsVectorEntirelyN(const vector<int>& v, int n);
+    int CountOccurrencesOfCharInString(const vector<char>& str, const char& c);
     
 private:
     string _problem_name;
