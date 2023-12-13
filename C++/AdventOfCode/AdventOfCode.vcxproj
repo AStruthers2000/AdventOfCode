@@ -163,6 +163,7 @@
     <ClCompile Include="2022\Day7\Year2022_Day7.cpp" />
     <ClCompile Include="2022\Day8\Year2022_Day8.cpp" />
     <ClCompile Include="2023\Day10\Year2023_Day10.cpp" />
+    <ClCompile Include="2023\Day11\Year2023_Day11.cpp" />
     <ClCompile Include="2023\Day1\Year2023_Day1.cpp" />
     <ClCompile Include="2023\Day2\Year2023_Day2.cpp" />
     <ClCompile Include="2023\Day3\Year2023_Day3.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="2022\Day7\Year2022_Day7.h" />
     <ClInclude Include="2022\Day8\Year2022_Day8.h" />
     <ClInclude Include="2023\Day10\Year2023_Day10.h" />
+    <ClInclude Include="2023\Day11\Year2023_Day11.h" />
     <ClInclude Include="2023\Day1\Year2023_Day1.h" />
     <ClInclude Include="2023\Day2\Year2023_Day2.h" />
     <ClInclude Include="2023\Day3\Year2023_Day3.h" />
@@ -215,6 +217,8 @@
     <Content Include="2022\Day8\test.txt" />
     <Content Include="2023\Day10\input.txt" />
     <Content Include="2023\Day10\test.txt" />
+    <Content Include="2023\Day11\input.txt" />
+    <Content Include="2023\Day11\test.txt" />
     <Content Include="2023\Day1\input.txt" />
     <Content Include="2023\Day1\test.txt" />
     <Content Include="2023\Day2\input.txt" />

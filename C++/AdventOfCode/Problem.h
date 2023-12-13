@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <sstream>
 #include <unordered_set>
+#include <map>
 
 using namespace std;
 
@@ -36,6 +37,7 @@ protected:
     uint64_t lcm(uint64_t a, uint64_t b);
     uint64_t lcm(const vector<int>& nums);
     bool IsVectorEntirelyN(const vector<int>& v, int n);
+    bool IsVectorEntirelyN(const vector<char>& v, char element);
     int CountOccurrencesOfCharInString(const vector<char>& str, const char& c);
     
 private:

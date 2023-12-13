@@ -61,7 +61,14 @@ bool Problem::IsVectorEntirelyN(const vector<int>& v, int n)
 {
     return all_of(v.begin(),
                   v.end(),
-                  [n](int i) { return i==n; });
+                  [n](const int i) { return i==n; });
+}
+
+bool Problem::IsVectorEntirelyN(const vector<char>& v, char element)
+{
+    return all_of(v.begin(),
+                  v.end(),
+                  [element](const char c){return c == element; });
 }
 
 int Problem::CountOccurrencesOfCharInString(const vector<char>& str, const char& c)
