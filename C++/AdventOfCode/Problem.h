@@ -39,6 +39,7 @@ protected:
     bool IsVectorEntirelyN(const vector<int>& v, int n);
     bool IsVectorEntirelyN(const vector<char>& v, char element);
     int CountOccurrencesOfCharInString(const vector<char>& str, const char& c);
+    bool IsNumberPowerOfTwo(int n) const;
     
 private:
     string _problem_name;

@@ -75,3 +75,8 @@ int Problem::CountOccurrencesOfCharInString(const vector<char>& str, const char&
 {
     return static_cast<int>(count(str.begin(), str.end(), c));
 }
+
+bool Problem::IsNumberPowerOfTwo(const int n) const
+{
+    return (n & n - 1) == 0 && n != 0;
+}
